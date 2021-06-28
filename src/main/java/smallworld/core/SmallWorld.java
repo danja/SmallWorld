@@ -48,7 +48,8 @@ public class SmallWorld {
         readImage(getClass().getResourceAsStream("/image"));
       }
     } catch (Exception e) {
-      output.setText("caught exception:" + e);
+      output.setText("Caught exception:" + e);
+      e.printStackTrace();
     }
     world.redraw();
   }

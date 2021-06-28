@@ -912,14 +912,20 @@ class SmallInterpreter {
                 break;
 
               case 77:
+              // --stackTop;
+             // --stackTop;
+              
                 { // set image on label
-                  SmallJavaObject img = (SmallJavaObject) stack[--stackTop];
-                  SmallJavaObject lab = (SmallJavaObject) stack[--stackTop];
+                  // SmallJavaObject img = (SmallJavaObject) stack[--stackTop]; // cast exception!
+                  // SmallJavaObject lab = (SmallJavaObject) stack[--stackTop];
+                  SmallObject img = (SmallObject) stack[--stackTop]; // cast exception!
+                  SmallObject lab = (SmallObject) stack[--stackTop];
                   Object jo = lab.value;
                   if (jo instanceof Label) {
                     ((Label) jo).setPicture((Picture) img.value);
                   }
                 }
+                
                 break;
 
               case 80:
@@ -1356,7 +1362,7 @@ class SmallInterpreter {
       try {
         execute(action, this, myThread);
       } catch (Exception e) {
-        System.out.println("caught exception " + e);
+        e.printStackTrace();
       }
     }
   }

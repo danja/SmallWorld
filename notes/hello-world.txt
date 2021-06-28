@@ -1,0 +1,23 @@
+from :
+
+http://web.engr.oregonstate.edu/~budd/SmallWorld/Book/Hello/index.html
+
+Class addNewClass: Object subclass
+
+run | win pane img |
+win <- Window new.
+win title: 'Hello App'.
+win size: 300@300.
+img <- Image size: 250@250.
+pane <- Pane image: img.
+pane onMouseDown: [:p | img at: p text: 'Hello World!'].
+win setPane: pane.
+win show
+
+Hello new run
+
+java.lang.ClassCastException: class smallworld.core.SmallObject cannot be cast to class smallworld.core.SmallJavaObject (smallworld.core.SmallObject and smallworld.core.SmallJavaObject are in unnamed module of loader 'app')
+	at smallworld.core.SmallInterpreter.execute(SmallInterpreter.java:916)
+	at smallworld.core.SmallInterpreter.execute(SmallInterpreter.java:369)
+	at smallworld.core.SmallInterpreter$ActionThread.run(SmallInterpreter.java:1357)
+
