@@ -21,6 +21,8 @@ public class SmallObject {
     return this;
   }
 
+
+  // was in SmallJavaObject
   ////////////////////////
   public SmallObject(SmallObject cls, Object v) {
     this(cls, 0);
